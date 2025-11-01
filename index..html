@@ -3,13 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Painel de Acesso</title>
+    
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+        crossorigin="anonymous"
+    >
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a7f601ba2a.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Medico</h1>
-    <a href="./front-medico/index.html">index</a>
-    <hr>
-    <h1>Paciente</h1>
-    <a href="./front-paciente/login.html">index</a>
+    <div class="container text-center">
+        <div class="card p-4 col-md-6 mx-auto">
+            <h1 class="mb-4">Selecione o Painel</h1>
+
+            <div class="d-grid gap-3">
+                <a href="./front-medico/index.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-user-md me-2"></i> Acesso Médico
+                </a>
+                <a href="./front-paciente/login.html" class="btn btn-success btn-lg">
+                    <i class="fa-solid fa-hospital-user me-2"></i> Acesso Paciente
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" 
+        crossorigin="anonymous">
+    </script>
 </body>
 </html>
