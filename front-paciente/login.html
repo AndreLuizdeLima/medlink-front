@@ -32,7 +32,7 @@
         <label for="email" class="block text-sm font-medium text-slate-700">E-mail</label>
         <div class="relative">
           <i class="fa-solid fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input type="email" id="email" placeholder="seu@email.com" required
+          <input type="email" id="email" placeholder="seu@email.com"
             class="pl-10 h-12 w-full border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500">
         </div>
       </div>
@@ -42,7 +42,7 @@
         <label for="password" class="block text-sm font-medium text-slate-700">Senha</label>
         <div class="relative">
           <i class="fa-solid fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-          <input type="password" id="password" placeholder="••••••••" required
+          <input type="password" id="password" placeholder="••••••••"
             class="pl-10 pr-10 h-12 w-full border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500">
           <button type="button" id="togglePassword"
             class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
@@ -102,19 +102,12 @@
         : '<i class="fa-solid fa-eye-slash"></i>';
     });
 
-    // Redirecionar quando o formulário for válido
+    // Redirecionar sem validação
     const loginForm = document.getElementById('loginForm');
     
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      
-      // Verifica se os campos estão preenchidos
-      if (email && password) {
-        window.location.href = '/paciente/';
-      }
+      window.location.href = './paciente.html';
     });
   </script>
 </body>
