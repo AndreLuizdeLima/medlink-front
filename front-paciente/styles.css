@@ -1,54 +1,74 @@
-/* styles.css - Layout Padrão */
+/* styles.css - Layout Mobile-First Sem Bordas */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #e2e8f0;
-  font-family: sans-serif;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 .container-padrao {
   background-color: white;
-  border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
   width: 100%;
-  max-width: 420px;
-  max-height: 90vh;
+  min-height: 100vh;
+  padding: 1.5rem;
   overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Desktop - apenas aqui volta a ter bordas e centralização */
+@media (min-width: 769px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .container-padrao {
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    max-width: 420px;
+    min-height: auto;
+    max-height: 90vh;
+    padding: 2rem;
+  }
+}
+
+/* Remove scrollbar visual mas mantém funcionalidade */
 .container-padrao::-webkit-scrollbar {
   display: none;
 }
 
-/* Tablets e mobile */
-@media (max-width: 768px) {
-  body {
-    align-items: flex-start;
-    padding: 0.5rem;
-    /* Margem de segurança */
-  }
+.container-padrao {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
+/* Ajuste para notch de iPhones */
+@supports (padding: max(0px)) {
   .container-padrao {
-    min-height: calc(100vh - 1rem);
-    /* Deixa 1rem de espaço */
-    max-height: none;
-    border-radius: 1rem;
-    max-width: 100%;
-    padding: 0.5rem;
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
   }
 }
 
-@media screen and (max-width: 991px) {
+/* Headers com espaçamento para mobile */
+.top-header {
+  padding-top: 1rem;
+}
+
+@media (min-width: 769px) {
   .top-header {
-    padding-top: 3vh !important;
+    padding-top: 0;
   }
 }
